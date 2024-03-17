@@ -1,0 +1,52 @@
+<div class="mat-dialog-title">
+  <div id="header">
+    <h3 *ngIf="input.language === 'de'"><i class="fas fa-bullhorn whatsnew-icon"></i>Was ist neu?</h3>
+    <h3 *ngIf="input.language === 'en'"><i class="fas fa-bullhorn whatsnew-icon"></i>What's new?</h3>
+  </div>
+  <!-- TODO: REM-34 -->
+  <!--<div id="release-notes-link">
+    <a [href]="releaseNotesUrl" class="link"><i class="fa fa-arrow-right" style="margin-right: 8px"></i>zu den
+      Release-Notes</a>
+  </div>-->
+</div>
+<div class="cps-apps-header">
+  <div id="cps-apps">
+    <span class="rm-project-title">{{projectData.name}}</span>
+  </div>
+  <span class="cps-apps-notation">Version {{releaseData.releaseNumber}}</span>
+</div>
+<mat-dialog-content>
+  <div class="key-feature">
+    <h2 class="rm-whatsnew-heading">{{ releaseData.headline }}</h2>
+    <angular-image-viewer *ngIf="!!releaseData.image" [src]="[releaseData.image]"></angular-image-viewer>
+    <div *ngIf="releaseData.majorField.showInWhatsNew" class="rm-whatsnew-major">
+      {{releaseData.majorField.content}}
+    </div>
+    <div *ngIf="releaseData.minorField.showInWhatsNew" class="rm-whatsnew-minor">
+      <h3 *ngIf="input.language === 'de'" >Weitere Verbesserungen</h3>
+      <h3 *ngIf="input.language === 'en'" >Other improvements</h3>
+      <div>
+        {{releaseData.minorField.content}}
+      </div>
+    </div>
+    <div *ngIf="releaseData.otherField.showInWhatsNew" class="rm-whatsnew-other">
+      <h3 *ngIf="input.language === 'de'" >Sonstiges</h3>
+      <h3 *ngIf="input.language === 'en'" >Other</h3>
+      <div>
+        {{releaseData.otherField.content}}
+      </div>
+    </div>
+    <div *ngIf="releaseData.bugfixField.showInWhatsNew" class="rm-whatsnew-bugfix">
+      <h3 *ngIf="input.language === 'de'" >Fehlerbehebungen</h3>
+      <h3 *ngIf="input.language === 'en'" >Bugfixes</h3>
+      <div>
+        {{releaseData.bugfixField.content}}
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions style="justify-content: right">
+  <button *ngIf="input.language === 'de'" class="btn btn-white-border-gray" mat-dialog-close>Schließen</button>
+  <button *ngIf="input.language === 'en'" class="btn btn-white-border-gray" mat-dialog-close>Close</button>
+</mat-dialog-actions>
+

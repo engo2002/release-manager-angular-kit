@@ -1,0 +1,16 @@
+{
+  "name": "release-manager-angular-kit-lib",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^17.3.0",
+    "@angular/core": "^17.3.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "@engo/engo-ui-kit-lib": "^1.5.0",
+    "@engo/release-manager-api-client-angular": "^2.2.1",
+    "@angular/material": "^17.3.0",
+    "@hreimer/angular-image-viewer": "^0.14.1"
+  },
+  "sideEffects": false
+}
